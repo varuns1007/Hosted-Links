@@ -12,19 +12,17 @@ window.onload = () => {
         parseInt(result)) /
         parseInt(products[i].originalProductQuantity)
     );
-    //Price Div
+   //Price Div
       if (discountedPrice === parseInt(originalPrice)) {
-        products[
-          i
-        ].priceDiv.innerHTML = `${String(
-          discountedPrice
-        )}`;
+        products[i].priceDiv.insertAdjacentHTML(
+          "afterend",
+          `<p>${originalPrice}</p>`
+        );
       } else {
-        products[
-          i
-        ].priceDiv.innerHTML = `${originalPrice}${String(
-          discountedPrice
-        )}`;
+        products[i].priceDiv.insertAdjacentHTML(
+          "afterend",
+          `<p>${discountedPrice}</p>`
+        );
     }
     //Total Price
     let originalTotalPrice = products[i].totalPrice;
